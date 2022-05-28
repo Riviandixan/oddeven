@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ODDEVEN</title>
+    <style>
+        section{
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form{
+            padding: 20px;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+
+        .header{
+            text-align: center;
+        }
+
+        .input{
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+        #input{
+            margin: 0 10px;   
+        }
+
+        #result{
+            width: 100%;
+            resize: none;
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <form action="" method="post" onsubmit="return oddeven();">
+            <div class="header">
+                <h3>MENENTUKAN BILANGAN GENAP ATAU GANJIL</h3>
+                <hr>
+            </div>
+            <div class="input">
+                <h4>Masukan sebuah bilangan bulat : </h4>
+                <input type="number" name="number" id="input" min="0" required autofocus autocomplete="off">
+                <input type="submit" value="Submit">
+            </div>
+            <div class="result">
+                <hr>
+                <h4>Kesimpulan : </h4>
+                <textarea name="result" id="result" cols="30" rows="7" disabled></textarea>
+            </div>
+        </form>
+    </section>
+
+    <script>
+        function oddeven(){
+            let input = document.getElementById("input").value;
+            let hasil = document.getElementById("result");
+            let text;
+
+            if(input % 2 == 0){
+                text = "Bilangan yang diinputkan termasuk bilangan genap";
+            }else{
+                text = "Bilangan yang diinputkan termasuk bilangan ganjil";
+            }
+
+            hasil.innerHTML = text;
+
+            return false;
+        }
+    </script>
+</body>
+</html>
